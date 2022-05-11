@@ -60,10 +60,12 @@ public class Compress {
                 counter = 0;
             }
 
-            System.out.println(ret);
-            ret = "";
+            ret += " ";
 
         }
+
+        System.out.println(ret);
+
     }
 
 }
