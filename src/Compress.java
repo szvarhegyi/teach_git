@@ -20,29 +20,50 @@ public class Compress {
     }
 
     public static String decompress(String compressedWord) {
-        //TODO: Misi please implement decompress method
-        return "";
+        String ret = "";
+        for (int i = 0; i < compressedWord.length(); i++) {
+
+            String numbers = "";
+            do {
+                try {
+                    Integer.parseInt(String.valueOf(compressedWord.charAt(i)));
+                    numbers += compressedWord.charAt(i);
+                    i++;
+                } catch (NumberFormatException e) {
+                    System.out.println(compressedWord.charAt(i) + " már nem konvertálható számmá");
+                    break;
+                }
+            } while (true);
+
+            for(int j = 0; j < Integer.parseInt(numbers);j++) {
+                ret += compressedWord.charAt( i );
+            }
+
+
+        }
+
+        return ret;
     }
 
     public static void main(String[] args) {
         /**
-        Scanner in = new Scanner(System.in);
-        String[] textsToCompress = in.nextLine().split("\\s");
+         Scanner in = new Scanner(System.in);
+         String[] textsToCompress = in.nextLine().split("\\s");
 
-        //First solution with for
-        for(int i = 0; i < textsToCompress.length; i++) {
-            System.out.print(compress(textsToCompress[i]) + " ");
-        }
-        System.out.println("\nAnother solutions:");
-        //or other solution with foreach
-        for (String word : textsToCompress) {
-            System.out.print(compress(word) + " ");
-        }
+         //First solution with for
+         for(int i = 0; i < textsToCompress.length; i++) {
+         System.out.print(compress(textsToCompress[i]) + " ");
+         }
+         System.out.println("\nAnother solutions:");
+         //or other solution with foreach
+         for (String word : textsToCompress) {
+         System.out.print(compress(word) + " ");
+         }
          */
 
 
         System.out.println("\nAnother solutions:");
-        String[] decompress = {"1h1e2l1o", "2a2b2c"};
+        String[] decompress = {"10a20b"};
 
         for (String word : decompress) {
             System.out.print(decompress(word) + " ");
