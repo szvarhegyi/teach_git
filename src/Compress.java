@@ -24,24 +24,20 @@ public class Compress {
 
         String word = "";
         for (int i = 0; i < compressedWord.length(); i++){
-            int n = 0;
             String numbers = "";
-            int number = Integer.parseInt(numbers);
             do {
                 try {
-                    n = Integer.parseInt(String.valueOf(compressedWord.charAt(i)));
+                    Integer.parseInt(String.valueOf(compressedWord.charAt(i)));
                     numbers += compressedWord.charAt(i);
                     i++;
                 } catch (NumberFormatException e){
-                    i++;
                     break;
                 }
             } while (true);
 
-            for (int j = 0; j < number; j++){
+            for (int j = 0; j < Integer.parseInt(numbers); j++){
                 word += compressedWord.charAt(i);
             }
-            numbers = "";
         }
 
         return word;
