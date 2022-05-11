@@ -21,7 +21,30 @@ public class Compress {
 
     public static String decompress(String compressedWord) {
         //TODO: Misi please implement decompress method
-        return "";
+
+        String word = "";
+        for (int i = 0; i < compressedWord.length(); i++){
+            int n = 0;
+            String numbers = "";
+            int number = Integer.parseInt(numbers);
+            do {
+                try {
+                    n = Integer.parseInt(String.valueOf(compressedWord.charAt(i)));
+                    numbers += compressedWord.charAt(i);
+                    i++;
+                } catch (NumberFormatException e){
+                    i++;
+                    break;
+                }
+            } while (true);
+
+            for (int j = 0; j < number; j++){
+                word += compressedWord.charAt(i);
+            }
+            numbers = "";
+        }
+
+        return word;
     }
 
     public static void main(String[] args) {
@@ -42,7 +65,7 @@ public class Compress {
 
 
         System.out.println("\nAnother solutions:");
-        String[] decompress = {"1h1e2l1o", "2a2b2c"};
+        String[] decompress = {"1h1e2l1o", "2a2b2c", "10a20b"};
 
         for (String word : decompress) {
             System.out.print(decompress(word) + " ");
