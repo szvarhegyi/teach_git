@@ -25,7 +25,7 @@ public class Compress {
     }
 
     public static void main(String[] args) {
-
+        /**
         Scanner in = new Scanner(System.in);
         String[] textsToCompress = in.nextLine().split("\\s");
 
@@ -38,33 +38,17 @@ public class Compress {
         for (String word : textsToCompress) {
             System.out.print(compress(word) + " ");
         }
+         */
 
 
         System.out.println("\nAnother solutions:");
+        String[] decompress = {"1h1e2l1o", "2a2b2c"};
 
-        //or without method call
-        int counter = 0;
-        String ret = "";
-        for(int j = 0; j < textsToCompress.length; j++) {
-
-           String textToCompress = textsToCompress[j];
-
-
-            for(int i = 0; i < textToCompress.length(); i++) {
-                do {
-                    counter++;
-                } while (i + counter < textToCompress.length() && textToCompress.charAt(i) == textToCompress.charAt(i + counter));
-
-                ret += counter + "" + textToCompress.charAt(i);
-                i += counter - 1;
-                counter = 0;
-            }
-
-            ret += " ";
-
+        for (String word : decompress) {
+            System.out.print(decompress(word) + " ");
         }
 
-        System.out.println(ret);
+
 
     }
 
